@@ -1,0 +1,30 @@
+.work-history {
+  padding: 60px 0;
+}
+
+.timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    gap: 16px;
+  }
+
+  .timeline-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

@@ -1,0 +1,160 @@
+.hero {
+  padding: 120px 0 80px;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 60px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.hero-description {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  color: var(--text-secondary);
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.photo-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--primary-color);
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+  flex-shrink: 0; /* Prevent container from growing */
+  margin: 0 auto; /* Center the container */
+}
+
+.photo-container:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-xl);
+}
+
+.professional-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This crops the image to fit the circle */
+  object-position: center top; /* Centers the face in the crop */
+  transition: var(--transition);
+  display: block; /* Remove any inline spacing */
+}
+
+.professional-photo:hover {
+  transform: scale(1.1);
+}
+
+/* Fallback placeholder styles (keep for backup) */
+.image-placeholder {
+  width: 300px;
+  height: 300px;
+  background-color: var(--bg-tertiary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  border: 4px solid var(--border-color);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+.stat {
+  text-align: center;
+  padding: 24px;
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .hero-image {
+    max-width: 280px; /* Smaller on mobile */
+    min-height: 350px;
+  }
+
+  .photo-container {
+    width: 250px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image {
+    max-width: 300px; /* Even smaller on very small screens */
+    min-height: 300px;
+  }
+
+  .photo-container {
+    width: 200px;
+    height: 300px;
+  }
+}
