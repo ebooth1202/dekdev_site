@@ -1,0 +1,11 @@
+{
+  "name": "dekdev-portfolio",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build",
+    "heroku-postbuild": "cd frontend && npm install && npm run build && cp -r build ../backend/"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
