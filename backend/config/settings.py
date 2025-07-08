@@ -21,12 +21,14 @@ class Settings(BaseSettings):
     # API Configuration
     frontend_url: str = "http://localhost:3000"
     api_host: str = "0.0.0.0"
-    api_port: int = 8000
+    api_port: int = int(os.environ.get("PORT", 8000))  # Heroku sets PORT
 
-    # Security
+    # Security - Updated for production
     allowed_origins: List[str] = [
         "http://localhost:3000",
-        "http://127.0.0.1:3000"
+        "http://127.0.0.1:3000",
+        "https://dekdevs.com",
+        "https://www.dekdevs.com"
     ]
 
     # Rate limiting (requests per minute)
@@ -34,8 +36,8 @@ class Settings(BaseSettings):
     chat_rate_limit_per_minute: int = 10
 
     # Environment
-    environment: str = "development"
-    debug: bool = True
+    environment: str = os.environ.get("ENVIRONMENT", "development")
+    debug: bool = os.environ.get("DEBUG", "false").lower() == "true"
 
     class Config:
         env_file = ".env"
